@@ -1,0 +1,103 @@
+import win32gui,win32api,win32con,time
+from win32api import GetSystemMetrics
+from PIL import ImageGrab
+def PilImage(x,y):
+    a,b=GetSystemMetrics(0),GetSystemMetrics(1)
+    im=ImageGrab.grab((0,0,a,b))
+    pix=im.load()
+    return pix[x,y]
+
+def DisplaySize():
+    return GetSystemMetrics(0),GetSystemMetrics(1)
+
+
+def LeftClick(x,y):
+    win32api.SetCursorPos((x,y))
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,x,y,0,0,)
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,x,y,0,0,)
+
+def RightClick(x,y):
+    win32api.SetCursorPos((x,y))
+    win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTDOWN, x, y, 0, 0)
+    win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTUP, x, y, 0, 0)
+
+
+def PressOnce(x):
+    win32api.keybd_event(x,0,0,0)
+
+
+# a,b=DisplaySize()
+# print(a,b)
+# time.sleep(10)
+# RightClick(41,646)
+# LeftClick(41,646)
+# PressOnce(13)  # Enter
+# PressOnce(9) # TAB
+# print(PilImage(27,650))
+def toutu10():
+    #偷天十
+    i=1
+    time.sleep(10)
+    while i<=100:
+        j = 1
+        m = 1
+        n = 1
+        LeftClick(820,697)
+        time.sleep(0.5)
+        LeftClick(701,645)
+        time.sleep(0.5)
+        LeftClick(554,548)
+        time.sleep(0.5)
+        LeftClick(564,609)
+        time.sleep(0.5)
+        LeftClick(688,518)
+        time.sleep(2)
+        while j<=11:
+            LeftClick(620, 380)
+            j=j+1
+            time.sleep(0.5)
+        while m<=3:
+            LeftClick(666, 422)
+            m=m+1
+            time.sleep(0.5)
+        while n<=7:
+            LeftClick(626, 377)
+            n=n+1
+            time.sleep(0.5)
+        LeftClick(730, 457)#攻击
+        time.sleep(11)
+        LeftClick(671, 472)#ying
+        time.sleep(0.5)
+        LeftClick(666, 499)#ling
+        time.sleep(0.5)
+        LeftClick(620, 380)#zuo
+        time.sleep(0.5)
+        LeftClick(666, 422)#xia
+        time.sleep(0.5)
+        LeftClick(730, 457)#gonga
+        time.sleep(12)
+
+        LeftClick(660, 408)#bai
+        time.sleep(0.5)
+
+
+        LeftClick(671, 472)  # ying
+        time.sleep(0.5)
+
+        LeftClick(660, 408)
+        time.sleep(0.5)
+
+        LeftClick(666, 499)  # ling
+        time.sleep(0.5)
+        time.sleep(0.5)
+        LeftClick(734, 416)
+        time.sleep(0.5)
+        LeftClick(666, 422)  # xia
+        time.sleep(0.5)
+
+        i=i+1
+
+
+
+
+toutu10()
